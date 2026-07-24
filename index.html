@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CrimeMind AI — Government-grade AI Crime Analytics & Investigation Copilot for police departments. Real-time crime intelligence, predictive policing, and investigation automation.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>CrimeMind AI — Crime Analytics & Investigation Copilot</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- Leaflet.js (Map) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- D3.js (Network Graph) -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <style>
+    /* Override Leaflet dark styling */
+    .leaflet-container { background: #050b18 !important; font-family: var(--font-primary) !important; }
+    .leaflet-popup-content-wrapper { background: rgba(10,22,48,0.95) !important; color: #e8f4fd !important; border: 1px solid rgba(0,212,255,0.3) !important; border-radius: 12px !important; backdrop-filter: blur(12px) !important; }
+    .leaflet-popup-tip { background: rgba(10,22,48,0.95) !important; }
+    .leaflet-popup-content { color: #a8c5da !important; font-family: 'Space Grotesk', sans-serif !important; font-size: 0.82rem !important; }
+    .leaflet-bar { background: rgba(10,22,48,0.9) !important; border: 1px solid rgba(0,212,255,0.2) !important; border-radius: 8px !important; }
+    .leaflet-bar a { background: transparent !important; color: #a8c5da !important; border-bottom-color: rgba(0,212,255,0.1) !important; }
+    .leaflet-bar a:hover { background: rgba(0,212,255,0.1) !important; color: #00d4ff !important; }
+    .leaflet-control-attribution { display: none !important; }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     APP WRAPPER
+     ============================================================ -->
+<div id="app">
+
+  <!-- ==================== LOGIN PAGE ==================== -->
+  <div id="login-page">
+    <div class="login-bg"></div>
+    <div class="login-grid-lines"></div>
+    <div class="login-particles" id="login-particles"></div>
+
+    <div class="login-card">
+      <!-- Logo -->
+      <div class="login-logo">
+        <div style="width:72px;height:72px;background:linear-gradient(135deg,#1e90ff,#00d4ff);border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-md);box-shadow:0 0 30px rgba(0,212,255,0.4),0 0 60px rgba(0,212,255,0.1)">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <div class="login-badge">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Secure Government Network
+        </div>
+        <h1 class="login-title">CrimeMind AI</h1>
+        <p class="login-sub">Intelligence Analytics Platform</p>
+      </div>
+
+      <!-- Form -->
+      <form id="login-form" autocomplete="off">
+        <div class="form-group">
+          <label class="form-label" for="login-user">Officer ID / Username</label>
+          <div class="form-input-wrap">
+            <svg class="form-input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <input type="text" class="form-input" id="login-user" placeholder="Enter your officer ID" required autocomplete="username" value="AJM-2024">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="login-pass">Password</label>
+          <div class="form-input-wrap">
+            <svg class="form-input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <input type="password" class="form-input" id="login-pass" placeholder="Enter your password" required autocomplete="current-password" value="••••••••">
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-lg)">
+          <label style="display:flex;align-items:center;gap:6px;font-size:0.8rem;color:var(--text-muted);cursor:pointer">
+            <input type="checkbox" checked style="accent-color:var(--accent-cyan)"> Remember session
+          </label>
+          <a href="#" style="font-size:0.8rem" onclick="return false">Forgot credentials?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-xl" id="login-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Secure Login
+        </button>
+      </form>
+
+      <div style="text-align:center;margin-top:var(--space-md)">
+        <button id="emergency-login" style="background:transparent;border:1px solid rgba(255,59,92,0.3);color:var(--danger);padding:8px 20px;border-radius:var(--radius-md);font-size:0.82rem;cursor:pointer;font-family:var(--font-primary);transition:all 0.2s" onmouseover="this.style.background='rgba(255,59,92,0.1)'" onmouseout="this.style.background='transparent'">
+          🚨 Emergency Access Login
+        </button>
+      </div>
+
+      <div style="margin-top:var(--space-xl);padding-top:var(--space-lg);border-top:1px solid var(--border-subtle);text-align:center">
+        <div style="display:flex;align-items:center;justify-content:center;gap:var(--space-sm);margin-bottom:6px">
+          <div class="live-dot"></div>
+          <span style="font-size:0.72rem;color:var(--text-muted);letter-spacing:0.06em;text-transform:uppercase">System Online · 847 CCTV Active · 6 Districts Monitored</span>
+        </div>
+        <p style="font-size:0.68rem;color:var(--text-disabled)">Unauthorized access is strictly prohibited · OSA 1923 Applies</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== APP SHELL ==================== -->
+  <div id="app-shell" class="hidden" style="display:grid">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation"></aside>
+
+    <!-- TOP BAR -->
+    <header class="topbar" id="topbar" role="banner"></header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="main-content" role="main"></main>
+
+  </div>
+
+  <!-- VOICE COMMAND FAB -->
+  <button class="voice-btn hidden" id="voice-fab" title="Voice Command — Say a command" aria-label="Voice command">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+      <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+      <line x1="12" y1="19" x2="12" y2="23"/>
+      <line x1="8" y1="23" x2="16" y2="23"/>
+    </svg>
+  </button>
+
+  <!-- VOICE PANEL -->
+  <div class="voice-panel hidden" id="voice-panel">
+    <div style="display:flex;align-items:center;gap:var(--space-sm);margin-bottom:var(--space-md)">
+      <div class="live-dot danger"></div>
+      <span style="font-size:0.85rem;font-weight:600;color:var(--text-primary)">Listening…</span>
+      <span style="font-size:0.75rem;color:var(--text-muted);margin-left:auto">Speak a command</span>
+    </div>
+    <div class="voice-wave">
+      <div class="voice-bar" style="height:8px"></div>
+      <div class="voice-bar" style="height:8px"></div>
+      <div class="voice-bar" style="height:8px"></div>
+      <div class="voice-bar" style="height:8px"></div>
+      <div class="voice-bar" style="height:8px"></div>
+      <div class="voice-bar" style="height:8px"></div>
+      <div class="voice-bar" style="height:8px"></div>
+    </div>
+    <div id="voice-result" style="font-size:0.82rem;color:var(--text-muted);text-align:center;margin-top:8px;font-style:italic"></div>
+    <div style="margin-top:var(--space-md);font-size:0.72rem;color:var(--text-disabled)">
+      <div style="margin-bottom:4px">Try saying:</div>
+      <div>"Show crimes in Central"</div>
+      <div>"Investigate Rajan Verma"</div>
+      <div>"Open criminal network"</div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+</div><!-- /#app -->
+
+<!-- ==================== JAVASCRIPT ==================== -->
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/map.js"></script>
+<script src="js/investigation.js"></script>
+<script src="js/network.js"></script>
+<script src="js/patrol.js"></script>
+<script src="js/prediction.js"></script>
+<script src="js/reports.js"></script>
+<script src="js/alerts.js"></script>
+
+<script>
+  // Post-login: show voice FAB
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new MutationObserver(() => {
+      const shell = document.getElementById('app-shell');
+      const fab = document.getElementById('voice-fab');
+      if (shell && !shell.classList.contains('hidden') && fab) {
+        fab.classList.remove('hidden');
+        observer.disconnect();
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+  });
+
+  // Keyboard shortcut: Ctrl+K → global search focus
+  document.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      const searchInput = document.getElementById('global-search');
+      if (searchInput) { searchInput.focus(); searchInput.select(); }
+    }
+  });
+
+  // Chart.js global defaults
+  if (window.Chart) {
+    Chart.defaults.color = '#a8c5da';
+    Chart.defaults.font.family = 'Space Grotesk';
+    Chart.defaults.borderColor = 'rgba(255,255,255,0.04)';
+  }
+</script>
+
+</body>
+</html>

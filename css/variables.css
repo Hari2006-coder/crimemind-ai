@@ -1,0 +1,92 @@
+:root {
+  /* Background layers */
+  --bg-void: #02060f;
+  --bg-primary: #050b18;
+  --bg-secondary: #0a1628;
+  --bg-tertiary: #0f1f38;
+  --bg-elevated: #132540;
+
+  /* Glass surfaces */
+  --glass-bg: rgba(10, 22, 48, 0.65);
+  --glass-bg-light: rgba(15, 35, 65, 0.55);
+  --glass-bg-hover: rgba(20, 45, 80, 0.75);
+  --glass-border: rgba(0, 212, 255, 0.12);
+  --glass-border-active: rgba(0, 212, 255, 0.35);
+  --glass-blur: blur(20px);
+
+  /* Accent colors */
+  --accent-blue: #1e90ff;
+  --accent-blue-light: #4da6ff;
+  --accent-cyan: #00d4ff;
+  --accent-teal: #00fff2;
+  --accent-purple: #8b5cf6;
+  --accent-indigo: #4f46e5;
+
+  /* Status colors */
+  --danger: #ff3b5c;
+  --danger-glow: rgba(255, 59, 92, 0.3);
+  --warning: #ffb020;
+  --warning-glow: rgba(255, 176, 32, 0.3);
+  --success: #00e676;
+  --success-glow: rgba(0, 230, 118, 0.3);
+  --info: #00d4ff;
+  --info-glow: rgba(0, 212, 255, 0.3);
+
+  /* Text */
+  --text-primary: #e8f4fd;
+  --text-secondary: #a8c5da;
+  --text-muted: #5a7a95;
+  --text-disabled: #3a5570;
+
+  /* Glows */
+  --glow-blue: 0 0 20px rgba(30, 144, 255, 0.4);
+  --glow-cyan: 0 0 25px rgba(0, 212, 255, 0.45);
+  --glow-cyan-intense: 0 0 40px rgba(0, 212, 255, 0.6);
+  --glow-danger: 0 0 20px rgba(255, 59, 92, 0.4);
+  --glow-success: 0 0 20px rgba(0, 230, 118, 0.4);
+  --glow-purple: 0 0 20px rgba(139, 92, 246, 0.4);
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --border-default: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(0, 212, 255, 0.2);
+
+  /* Gradients */
+  --grad-blue: linear-gradient(135deg, #1e90ff, #00d4ff);
+  --grad-danger: linear-gradient(135deg, #ff3b5c, #ff6b35);
+  --grad-success: linear-gradient(135deg, #00e676, #00b4d8);
+  --grad-purple: linear-gradient(135deg, #8b5cf6, #4f46e5);
+  --grad-card: linear-gradient(135deg, rgba(10,22,48,0.8), rgba(5,15,35,0.9));
+  --grad-sidebar: linear-gradient(180deg, #050b18 0%, #02060f 100%);
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-primary: 'Space Grotesk', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-page: 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Sidebar */
+  --sidebar-width: 260px;
+  --sidebar-collapsed: 72px;
+  --topbar-height: 64px;
+}
