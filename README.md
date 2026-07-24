@@ -144,7 +144,23 @@ crimemind-ai/
 
 ## 📸 Screenshots
 
-> Login → Dashboard → Crime Map → AI Investigation → Criminal Network
+### 🔐 Login Page
+![Login Page](screenshots/screenshot-login.jpg)
+
+### 📊 Main Dashboard
+![Dashboard](screenshots/screenshot-dashboard.jpg)
+
+### 🗺️ Live Crime Map
+![Crime Map](screenshots/screenshot-crime-map.jpg)
+
+### 🕵️ AI Investigation Copilot
+![Investigation](screenshots/screenshot-investigation.jpg)
+
+### 🕸️ Criminal Network Graph
+![Network Graph](screenshots/screenshot-network.jpg)
+
+### 🚔 AI Patrol Simulator & Prediction Engine
+![Patrol and Prediction](screenshots/screenshot-patrol-prediction.jpg)
 
 ---
 
