@@ -1,0 +1,43 @@
+{
+  "name": "crimemind-ai",
+  "version": "1.2.0",
+  "description": "🛡️ CrimeMind AI — Futuristic AI-powered Crime Analytics & Investigation Copilot for police departments. Built with Leaflet.js, D3.js, Chart.js. Dark glassmorphism UI.",
+  "author": "Hari2006-coder",
+  "license": "MIT",
+  "homepage": "https://hari2006-coder.github.io/crimemind-ai/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hari2006-coder/crimemind-ai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hari2006-coder/crimemind-ai/issues"
+  },
+  "keywords": [
+    "ai",
+    "crime-analytics",
+    "police",
+    "govtech",
+    "dashboard",
+    "leafletjs",
+    "d3js",
+    "chartjs",
+    "glassmorphism",
+    "dark-mode",
+    "hackathon",
+    "datathon",
+    "predictive-policing",
+    "gis",
+    "intelligence",
+    "investigation",
+    "javascript",
+    "vanilla-js",
+    "public-safety",
+    "web-application"
+  ],
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server --port=3000"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
