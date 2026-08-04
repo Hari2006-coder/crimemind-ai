@@ -3,9 +3,22 @@
 
 > **A futuristic AI-powered Crime Analytics and Investigation Copilot for police departments.**
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-00d4ff?style=for-the-badge&logo=github)](https://harishanker.github.io/crimemind-ai)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
-[![Built With](https://img.shields.io/badge/Built%20With-HTML%20%7C%20CSS%20%7C%20JS-1e90ff?style=for-the-badge)](.)
+[![Live Demo](https://img.shields.io/badge/🌐%20Live%20Demo-Click%20Here-00d4ff?style=for-the-badge)](https://hari2006-coder.github.io/crimemind-ai/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Hari2006--coder%2Fcrimemind--ai-181717?style=for-the-badge&logo=github)](https://github.com/Hari2006-coder/crimemind-ai)
+[![Demo Video](https://img.shields.io/badge/🎬%20Demo%20Video-Watch%20Now-ff3b5c?style=for-the-badge)](https://github.com/Hari2006-coder/crimemind-ai/blob/master/demo/CrimeMind-AI-Demo.mp4)
+[![Screenshots](https://img.shields.io/badge/📸%20Screenshots-View%20All-1e90ff?style=for-the-badge)](https://github.com/Hari2006-coder/crimemind-ai/tree/master/screenshots)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+
+---
+
+## 🔗 Quick Links
+
+| | Link |
+|---|---|
+| 🌐 **Live Demo** | https://hari2006-coder.github.io/crimemind-ai/ |
+| 📦 **GitHub Repository** | https://github.com/Hari2006-coder/crimemind-ai |
+| 🎬 **Demo Video** | https://github.com/Hari2006-coder/crimemind-ai/blob/master/demo/CrimeMind-AI-Demo.mp4 |
+| 📸 **Screenshots** | https://github.com/Hari2006-coder/crimemind-ai/tree/master/screenshots |
 
 ---
 
@@ -65,12 +78,12 @@ Inspired by platforms like **Palantir Gotham**, **IBM Watson**, and **Tesla Dash
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/crimemind-ai.git
+git clone https://github.com/Hari2006-coder/crimemind-ai.git
 
 # Open in browser — NO build step required!
 cd crimemind-ai
-open index.html   # macOS
 start index.html  # Windows
+open index.html   # macOS
 ```
 
 Or simply **double-click** `index.html` — it runs entirely in the browser.
@@ -109,17 +122,20 @@ crimemind-ai/
 │   ├── layout.css          # Sidebar, topbar
 │   ├── components.css      # UI components
 │   └── pages.css           # Page-specific styles
-└── js/
-    ├── data.js             # Mock crime dataset
-    ├── app.js              # Router + app shell
-    ├── dashboard.js        # Charts + stats
-    ├── map.js              # Leaflet GIS map
-    ├── investigation.js    # AI investigation
-    ├── network.js          # D3 network graph
-    ├── patrol.js           # Patrol simulator
-    ├── prediction.js       # AI prediction + dark web
-    ├── reports.js          # Report generator
-    └── alerts.js           # Alert center + settings
+├── js/
+│   ├── data.js             # Mock crime dataset
+│   ├── app.js              # Router + app shell
+│   ├── dashboard.js        # Charts + stats
+│   ├── map.js              # Leaflet GIS map
+│   ├── investigation.js    # AI investigation
+│   ├── network.js          # D3 network graph
+│   ├── patrol.js           # Patrol simulator
+│   ├── prediction.js       # AI prediction + dark web
+│   ├── reports.js          # Report generator
+│   └── alerts.js           # Alert center + settings
+├── screenshots/            # 7 UI screenshots
+└── demo/
+    └── CrimeMind-AI-Demo.mp4   # Full demo video (Git LFS)
 ```
 
 ---
@@ -138,7 +154,7 @@ crimemind-ai/
 **Project:** CrimeMind AI  
 **Category:** AI for Public Safety / GovTech  
 **Team:** Solo  
-**Built In:** 1 session with Antigravity AI  
+**Event:** Datathon 2026  
 
 ---
 
@@ -172,5 +188,8 @@ MIT License — Free to use, modify, and distribute.
 
 <div align="center">
   <strong>Built with ❤️ for public safety · CrimeMind AI © 2024</strong><br>
-  <em>Zero dependencies · Zero build step · 100% browser native</em>
+  <em>Zero dependencies · Zero build step · 100% browser native</em><br><br>
+  <a href="https://hari2006-coder.github.io/crimemind-ai/">🌐 Live Demo</a> ·
+  <a href="https://github.com/Hari2006-coder/crimemind-ai/blob/master/demo/CrimeMind-AI-Demo.mp4">🎬 Demo Video</a> ·
+  <a href="https://github.com/Hari2006-coder/crimemind-ai/tree/master/screenshots">📸 Screenshots</a>
 </div>
